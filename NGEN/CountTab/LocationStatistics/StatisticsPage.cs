@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace NGEN
 {
-    public class StatisticsPage : LocationStatistics
+    public class StatisticsPage : LocationStatisticsPage
     {
         private IWebDriver _driver;
         private WebDriverWait _wait;

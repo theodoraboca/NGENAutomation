@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System.Threading;
 
 namespace NGEN
 {
@@ -16,7 +15,7 @@ namespace NGEN
             _wait = wait;
         }
 
-        public IWebElement ManageCollectorUSBButton => _driver.FindElements(By.CssSelector("a.header-navigation-tab.red-tab.header-navigation-tab-sm"))[1];
+        public IWebElement ManageCollectorUSBButton => _driver.FindElements(By.CssSelector(RedTabCSSSelector))[1];
         
         public ManageCollectorUSBPage OpenManageCollectorUSBPage()
         {

@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace NGEN
 {
@@ -15,13 +16,33 @@ namespace NGEN
             _wait = wait;
         }
 
+
         public IWebElement LocationStatisticsButton => _driver.FindElement(By.CssSelector("a.header-navigation-item.header-submenu-open.header-navigation-item-active"));
+        public IWebElement EditButton => _driver.FindElement(By.XPath("//a[@title='Edit']"));
+        public IWebElement InterimReportButton => _driver.FindElement(By.XPath("//a[@title='Interim Report']"));
 
 
-        public LocationStatistics OpenLocationStatistics()
+
+        public LocationStatisticsPage OpenLocationStatisticsPage()
         {
             LocationStatisticsButton.Click();
-            return new LocationStatistics(_driver, _wait);
+            return new LocationStatisticsPage(_driver, _wait);
         }
+
+        public EditPage OpenEditPage()
+        {
+            EditButton.Click();
+            return new EditPage(_driver, _wait);
+        }
+
+        public InterimReportPage OpenInterimReportPage()
+        {
+            InterimReportButton.Click();
+            return new InterimReportPage(_driver, _wait);
+        }
+
+
+
+
     }
 }

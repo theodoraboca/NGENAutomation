@@ -3,12 +3,12 @@ using OpenQA.Selenium.Support.UI;
 
 namespace NGEN
 {
-    public class ListViewPage: LocationStatisticsPage
+    public class CustomerEvaluationPIQAPage : FinishPage
     {
         private IWebDriver _driver;
         private WebDriverWait _wait;
 
-        public ListViewPage(IWebDriver driver, WebDriverWait wait)
+        public CustomerEvaluationPIQAPage(IWebDriver driver, WebDriverWait wait)
             :base(driver, wait)
         {
             _driver = driver;

@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace NGEN
 {
-    public class MapViewPage: LocationStatistics
+    public class MapViewPage: LocationStatisticsPage
     {
         private IWebDriver _driver;
         private WebDriverWait _wait;

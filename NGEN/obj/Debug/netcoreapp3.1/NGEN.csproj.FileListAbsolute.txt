@@ -104,4 +104,5 @@ C:\Users\Theodora\source\repos\NGENAutomation\NGEN\bin\Debug\netcoreapp3.1\Micro
 C:\Users\Theodora\source\repos\NGENAutomation\NGEN\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\Theodora\source\repos\NGENAutomation\NGEN\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\Theodora\source\repos\NGENAutomation\NGEN\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Theodora\source\repos\NGENAutomation\NGEN\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
 C:\Users\Theodora\source\repos\NGENAutomation\NGEN\obj\Debug\netcoreapp3.1\NGEN.csproj.CoreCompileInputs.cache

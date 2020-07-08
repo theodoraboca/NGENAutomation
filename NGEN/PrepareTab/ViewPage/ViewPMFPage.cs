@@ -14,5 +14,14 @@ namespace NGEN
             _driver = driver;
             _wait = wait;
         }
+
+        public IWebElement DepartmentsButton => _driver.FindElements(By.CssSelector(RedTabCSSSelector))[1];
+
+        public DepartmentsPage OpenDepartmentsPage()
+        {
+            DepartmentsButton.Click();
+            return new DepartmentsPage(_driver, _wait);
+
+        }
     }
 }

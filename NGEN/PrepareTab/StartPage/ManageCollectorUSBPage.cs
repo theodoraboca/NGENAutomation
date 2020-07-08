@@ -15,7 +15,7 @@ namespace NGEN
             _wait = wait;
         }
 
-        public IWebElement HandheldDevicesButton => _driver.FindElements(By.CssSelector("a.header-navigation-tab.red-tab.header-navigation-tab-sm"))[2];
+        public IWebElement HandheldDevicesButton => _driver.FindElements(By.CssSelector(RedTabCSSSelector))[2];
 
 
         public HandheldDevicesPage OpenHandheldDevicesPage()

@@ -8,13 +8,14 @@ using System.Threading;
 
 namespace NGEN
 {
-    public class LoginPage
+    public class LoginPage : PageBase
     {
         private IWebDriver _driver;
         private WebDriverWait _wait;
         private IConfiguration _configuration;
 
         public LoginPage(IWebDriver driver, WebDriverWait wait)
+            :base(driver, wait)
         {
             _driver = driver;
             _wait = wait;

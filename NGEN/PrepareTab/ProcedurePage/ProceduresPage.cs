@@ -14,5 +14,14 @@ namespace NGEN
             _driver = driver;
             _wait = wait;
         }
+
+        public IWebElement ConfigurationSummaryButton => _driver.FindElements(By.CssSelector(RedTabCSSSelector))[1];
+
+        public ConfigurationSummaryPage OpenConfigurationSummaryPage()
+        {
+            ConfigurationSummaryButton.Click();
+            return new ConfigurationSummaryPage(_driver, _wait);
+        }
+
     }
 }

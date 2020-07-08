@@ -22,6 +22,7 @@ namespace NGEN
         public IWebElement ViewButton => _driver.FindElement(By.XPath("//a[@title='View']"));
         public IWebElement ExtraButton => _driver.FindElement(By.XPath("//a[@title='Extra']"));
 
+
         public StartInventoryStartPropertiesPage OpenInventoryStartPropertiesTab()
         {
             Thread.Sleep(2000);

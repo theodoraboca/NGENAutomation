@@ -4,12 +4,12 @@ using OpenQA.Selenium.Support.UI;
 
 namespace NGEN
 {
-    public class LocationStatistics : CountPage
+    public class LocationStatisticsPage : CountPage
     {
         private IWebDriver _driver;
         private WebDriverWait _wait;
 
-        public LocationStatistics(IWebDriver driver, WebDriverWait wait)
+        public LocationStatisticsPage(IWebDriver driver, WebDriverWait wait)
             : base(driver, wait)
         {
             _driver = driver;
@@ -20,26 +20,30 @@ namespace NGEN
         public IWebElement ListViewButton => _driver.FindElement(By.XPath("//div[@title='List View']"));
         public IWebElement StatisticsButton => _driver.FindElement(By.XPath("//div[@title='Statistics']"));
 
-        public MapViewPage OpenMapViewPage()
+        public void HoverOnLocationStatistics()
         {
             Actions action = new Actions(_driver);
             action.MoveToElement(LocationStatisticsButton).Build().Perform();
+        }
+
+        public MapViewPage OpenMapViewPage()
+        {
+            HoverOnLocationStatistics();
             MapViewButton.Click();
             return new MapViewPage(_driver, _wait);
         }
 
         public ListViewPage OpenListViewPage()
         {
-            Actions action = new Actions(_driver);
-            action.MoveToElement(LocationStatisticsButton).Build().Perform();
+            HoverOnLocationStatistics();
             ListViewButton.Click();
+            _wait.Until(ExpectedConditions.ElementExists(By.CssSelector("div.divTableContainer.w-100")));
             return new ListViewPage(_driver, _wait);
         }
 
         public StatisticsPage OpenStatisticsPage()
         {
-            Actions action = new Actions(_driver);
-            action.MoveToElement(LocationStatisticsButton).Build().Perform();
+            HoverOnLocationStatistics();
             StatisticsButton.Click();
             return new StatisticsPage(_driver, _wait);
         }

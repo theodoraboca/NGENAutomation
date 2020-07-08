@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System.Reflection.Metadata;
 using System.Threading;
 
 namespace NGEN
@@ -19,6 +20,12 @@ namespace NGEN
         public IWebElement YesConfirmationButton => _driver.FindElement(By.CssSelector("button.modal-rgis-button"));
         public IWebElement PrepareButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.prepare.active"));
         public IWebElement CountButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.count"));
+        public IWebElement VerifyButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.verify"));
+        public IWebElement FinishButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.finish"));
+
+        public static string RedTabCSSSelector = "a.header-navigation-tab.red-tab.header-navigation-tab-sm";
+        public static string HeaderNavigationItemButton = "a.header-navigation-item.header-navigation-item";
+
 
         public LoginPage Logout()
         {
@@ -28,9 +35,9 @@ namespace NGEN
             return new LoginPage(_driver, _wait);
         }
 
-        public PreparePage OpenPrepareTab()
+        public PreparePage OpenPreparePage()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             PrepareButton.Click();
             return new PreparePage(_driver, _wait);
         }
@@ -38,9 +45,20 @@ namespace NGEN
         public CountPage OpenCountPage()
         {
             CountButton.Click();
-            return new CountPage(_driver, _wait); 
+            return new CountPage(_driver, _wait);
         }
 
+        public VerifyPage OpenVerifyPage()
+        {
+            VerifyButton.Click();
+            return new VerifyPage(_driver, _wait);
+        }
+
+        public FinishPage OpenFinishPage()
+        {
+            FinishButton.Click();
+            return new FinishPage(_driver, _wait);
+        }
 
     }
 }
