@@ -17,7 +17,7 @@ namespace NGEN
         }
 
         public IWebElement LogoutButton => _driver.FindElement(By.XPath("//div[@class='nav-right']/div[4]"));
-        public IWebElement YesConfirmationButton => _driver.FindElement(By.CssSelector("button.modal-rgis-button"));
+        public IWebElement YesLogoutConfirmationButton => _driver.FindElement(By.CssSelector("button.modal-rgis-button"));
         public IWebElement PrepareButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.prepare.active"));
         public IWebElement CountButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.count"));
         public IWebElement VerifyButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.verify"));
@@ -31,7 +31,7 @@ namespace NGEN
         {
             Thread.Sleep(2000);
             LogoutButton.Click();
-            YesConfirmationButton.Click();
+            YesLogoutConfirmationButton.Click();
             return new LoginPage(_driver, _wait);
         }
 

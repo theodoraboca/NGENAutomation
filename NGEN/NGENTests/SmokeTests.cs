@@ -6,12 +6,12 @@ using Xunit;
 
 namespace NGEN
 {
-    public class NgenTests
+    public class SmokeTests
     {
         [Fact]
-        public void LoginLogout()
+        public void UserShouldLoginSuccessfully_WhenCredentialsAreValid_AndLogout()
         {
-            // Arrange 
+            // Arrange
 
             var driver = new ChromeDriver();
             var wait = new WebDriverWait(driver, new TimeSpan(0,0,5));
@@ -36,7 +36,7 @@ namespace NGEN
         }
 
         [Fact]
-        public void SmokeTest()
+        public void UserShouldSuccesfullyNavigateToEveryNGENPage()
         {
             // Arrange
 
