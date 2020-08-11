@@ -21,6 +21,8 @@ namespace NGEN
         public IWebElement ProceduresButton => _driver.FindElement(By.XPath("//a[@title='Procedures']"));
         public IWebElement ViewButton => _driver.FindElement(By.XPath("//a[@title='View']"));
         public IWebElement ExtraButton => _driver.FindElement(By.XPath("//a[@title='Extra']"));
+        public IWebElement BarcodeButton => _driver.FindElement(By.XPath("//a[@title='Barcode']"));
+
 
 
         public StartInventoryStartPropertiesPage OpenInventoryStartPropertiesTab()
@@ -47,6 +49,13 @@ namespace NGEN
         {
             ExtraButton.Click();
             return new ExtraPage(_driver, _wait);
+        }
+
+        public BarcodePage OpenBarcodePage()
+        {
+            BarcodeButton.Click();
+            return new BarcodePage(_driver, _wait);
+
         }
 
     }

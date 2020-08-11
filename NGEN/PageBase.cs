@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System.Reflection.Metadata;
 using System.Threading;
 
 namespace NGEN
@@ -18,7 +17,7 @@ namespace NGEN
 
         public IWebElement LogoutButton => _driver.FindElement(By.XPath("//div[@class='nav-right']/div[4]"));
         public IWebElement YesLogoutConfirmationButton => _driver.FindElement(By.CssSelector("button.modal-rgis-button"));
-        public IWebElement PrepareButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.prepare.active"));
+        public IWebElement PrepareButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.prepare"));
         public IWebElement CountButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.count"));
         public IWebElement VerifyButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.verify"));
         public IWebElement FinishButton => _driver.FindElement(By.CssSelector("a.header-navigation-tab.finish"));
