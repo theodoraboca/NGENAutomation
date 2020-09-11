@@ -20,7 +20,7 @@ namespace NGEN
         public IWebElement LocationStatisticsButton => _driver.FindElement(By.CssSelector("a.header-navigation-item.header-submenu-open.header-navigation-item-active"));
         public IWebElement EditButton => _driver.FindElement(By.XPath("//a[@title='Edit']"));
         public IWebElement InterimReportButton => _driver.FindElement(By.XPath("//a[@title='Interim Report']"));
-
+        public IWebElement InterimOutputs => _driver.FindElement(By.XPath("//a[@title = 'Interim Outputs']"));
 
 
         public LocationStatisticsPage OpenLocationStatisticsPage()
@@ -41,6 +41,11 @@ namespace NGEN
             return new InterimReportPage(_driver, _wait);
         }
 
+        public InterimOutputsPage OpenInterimOutputsPage()
+        {
+            InterimOutputs.Click();
+            return new InterimOutputsPage(_driver, _wait);
+        }
 
 
 

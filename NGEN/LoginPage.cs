@@ -40,6 +40,7 @@ namespace NGEN
             BadgeID.SendKeys(CustomNGENConfiguration.DefaultConfiguration["Login:BadgeID"]);
             CustomRadioRGISOption.Click();
             Submit.Click();
+            Thread.Sleep(5000);
             return new PageBase(_driver, _wait);
         }
 

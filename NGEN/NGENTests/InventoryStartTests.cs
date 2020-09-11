@@ -422,6 +422,7 @@ namespace NGEN
             driver.Navigate().Refresh();
 
             // Assert
+
             var storeManagerName = StartInventoryStartPropertiesPage.StoreManagerField.GetAttribute("value");
             var currentStoreManagerName = "George Blake";
             Assert.True(storeManagerName == currentStoreManagerName);
